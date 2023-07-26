@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin public.ecr.aws/c7l4l0y6/shira-hello-world
+  build:
+    commands:
+      - docker build -t public.ecr.aws/c7l4l0y6/shira-hello-world/hello-world:latest .
+  post_build:
+    commands:
+      - docker push public.ecr.aws/c7l4l0y6/shira-hello-world/hello-world:latest
+artifacts:
+  files:
+    - '**/*'
