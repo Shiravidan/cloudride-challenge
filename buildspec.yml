@@ -3,7 +3,8 @@ phases:
   pre_build:
     commands:
       - aws ecr get-login-password --region us-east-2
-      - systemctl status docker
+      - sudo service --status-all 
+      - sudo service docker start
   build:
     commands:
       - docker build -t public.ecr.aws/c7l4l0y6/shira-hello-world:latest .
