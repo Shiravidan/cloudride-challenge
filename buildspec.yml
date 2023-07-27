@@ -3,7 +3,7 @@ phases:
   pre_build:
     commands:
       - aws --version
-      - $(aws ecr get-login --region us-east-2 --no-include-email)
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/c7l4l0y6/shira-hello-world
       - REPOSITORY_URI=public.ecr.aws/c7l4l0y6/shira-hello-world
   build:
     commands:
