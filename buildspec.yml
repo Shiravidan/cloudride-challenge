@@ -15,7 +15,7 @@ phases:
         sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
       - sudo apt update
       - apt-cache policy docker-ce
-      - sudo apt install docker-ce
+      - sudo apt --assume-yes install docker-ce
       - sudo service docker start
   build:
     commands:
