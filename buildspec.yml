@@ -17,6 +17,7 @@ phases:
       - apt-cache policy docker-ce
       - sudo apt --assume-yes install docker-ce
       - sudo service docker restart
+      # test
   build:
     commands:
       - docker build -t public.ecr.aws/c7l4l0y6/shira-hello-world:latest .
