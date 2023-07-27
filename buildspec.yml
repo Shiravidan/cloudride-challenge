@@ -3,7 +3,7 @@ phases:
   pre_build:
     commands:
       - aws ecr get-login-password --region us-east-2
-      - sudo service --status-all 
+      - sudo yum install docker-engine 
       - sudo service docker start
   build:
     commands:
