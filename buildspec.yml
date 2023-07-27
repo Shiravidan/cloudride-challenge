@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - aws ecr get-login-password --region us-east-2
+      - $(aws ecr get-login-password --region us-east-2)
       - sudo apt-get update
       - sudo apt install apt-transport-https ca-certificates curl
         software-properties-common
