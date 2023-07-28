@@ -25,7 +25,6 @@ phases:
     commands:
       - docker tag shira-hello-world:latest public.ecr.aws/c7l4l0y6/shira-hello-world:latest  
       - docker push public.ecr.aws/c7l4l0y6/shira-hello-world:latest
-      # artifact to suit ECS:
       - apt-get install jq -y
       - ContainerName="shirahw"
       - ImageURI=$(cat imageDetail.json | jq -r '.ImageURI')
