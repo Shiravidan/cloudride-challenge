@@ -19,8 +19,6 @@ phases:
       - sudo apt --assume-yes install docker-ce
       - sudo service docker restart
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/c7l4l0y6
-        #   - docker login -u AWS -p $(aws ecr get-login-password --region us-east-2) public.ecr.aws/c7l4l0y6
-
   build:
     commands:
       - docker build -t public.ecr.aws/c7l4l0y6/shira-hello-world:latest .
