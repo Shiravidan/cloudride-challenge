@@ -25,6 +25,7 @@ phases:
     commands:
       - docker tag shira-hello-world:latest public.ecr.aws/c7l4l0y6/shira-hello-world:latest  
       - docker push public.ecr.aws/c7l4l0y6/shira-hello-world:latest
+      - aws deploy push --hello-world --image-name public.ecr.aws/c7l4l0y6/shira-hello-world:latest --region us-east-2     
 artifacts:
   files:
     - imagedefinitions.json
