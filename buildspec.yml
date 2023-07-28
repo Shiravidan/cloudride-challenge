@@ -18,8 +18,8 @@ phases:
       - apt-cache policy docker-ce
       - sudo apt --assume-yes install docker-ce
       - sudo service docker restart
-    #  - aws ecr-public get-login-password --region us-east-2 | docker login --username AWS --password-stdin public.ecr.aws/c7l4l0y6
-      - docker login -u AWS -p $(aws ecr get-login-password --region us-east-2) public.ecr.aws/c7l4l0y6
+      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin public.ecr.aws/c7l4l0y6
+   #   - docker login -u AWS -p $(aws ecr get-login-password --region us-east-2) public.ecr.aws/c7l4l0y6
 
   build:
     commands:
