@@ -22,6 +22,7 @@ phases:
   build:
     commands:
       - docker build -t public.ecr.aws/c7l4l0y6/shira-hello-world:latest .
+      - docker images
   post_build:
     commands:
       - docker tag shira-hello-world:latest public.ecr.aws/c7l4l0y6/shira-hello-world:latest  
