@@ -18,12 +18,13 @@ phases:
       - apt-cache policy docker-ce
       - sudo apt --assume-yes install docker-ce
       - sudo service docker restart
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/c7l4l0y6
   build:
     commands:
       - docker build -t public.ecr.aws/c7l4l0y6/shira-hello-world:latest .
   post_build:
     commands:
-      - docker tag shira-hello-world:latest public.ecr.aws/c7l4l0y6/shira-hello-world:latest
+      - docker tag shira-hello-world:latest public.ecr.aws/c7l4l0y6/shira-hello-world:latest  
       - docker push public.ecr.aws/c7l4l0y6/shira-hello-world:latest
 artifacts:
   files:
