@@ -4,6 +4,7 @@ phases:
   pre_build:
     commands:
  #     - aws ecr get-login-password --region us-east-2
+      - aws --version
       # install docker:
       - sudo apt-get update
       - sudo apt install apt-transport-https ca-certificates curl
