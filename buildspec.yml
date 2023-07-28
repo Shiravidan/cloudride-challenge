@@ -26,6 +26,7 @@ phases:
     commands:
       - docker tag shira-hello-world:latest public.ecr.aws/c7l4l0y6/shira-hello-world:latest  
       - docker push public.ecr.aws/c7l4l0y6/shira-hello-world:latest
+      - echo '[{"name":"shirahw","imageUri":"public.ecr.aws/c7l4l0y6/shira-hello-world:latest"}]' > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
